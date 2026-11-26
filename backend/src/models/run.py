@@ -16,3 +16,5 @@ class Run(Base):
     settings: Mapped[dict] = mapped_column(JSON)
     result: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     error: Mapped[str | None] = mapped_column(Text)
+    parent_run_id: Mapped[int | None] = mapped_column(ForeignKey('analysis_runs.id'), nullable=True)
+    calibration_versions: Mapped[dict | None] = mapped_column(JSON, nullable=True)

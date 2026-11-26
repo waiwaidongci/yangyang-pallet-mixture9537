@@ -12,3 +12,4 @@ class ReviewCreate(BaseModel):
 class ReviewInfo(ReviewCreate):
     run_id: int
     created_at: str
+    switched: bool = False

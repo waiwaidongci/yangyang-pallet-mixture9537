@@ -22,13 +22,21 @@ SPEC = {
     'settings': SETTINGS,
     'modules': {
         'datasets': '来货板件测湿台账',
+        'calibrations': '库位仪表偏差校准',
         'runs': '高斯混合拟合与 BIC 选型',
         'results': '库位对账与待分拣清单',
         'reviews': '复测交班签核',
     },
-    'limitation': '干湿组表示该训练台账内的相对含水模式。跨库位的仪表差异需用复测核对。',
+    'limitation': '干湿组表示该训练台账内的相对含水模式。跨库位的仪表差异须由各库位校准区间核对；'
+                  '区间端点和中段都要落在同一相对湿度组才会自动分拣。',
     'dataset_name': '20261125-回收托盘板材测湿.csv',
-    'recommendation': '先复测待分拣清单中的人工复测件，并核对留出库位的密度与复测比例后签核。',
+    'recommendation': '先复测待分拣清单中的人工复测件，按最新校准核对跨组区间，再签核并切换分拣单。',
+    'calibration_fields': {
+        'location': '库位',
+        'bias_lower_pct': '仪表偏差下限（百分点）',
+        'bias_upper_pct': '仪表偏差上限（百分点）',
+        'revision': '校准修订号',
+    },
 }
 
 
